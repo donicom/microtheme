@@ -3,17 +3,17 @@
   <head>
     <title>MicroTheme</title>
     <!-- VENDOR-LIBS -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/jscolor.js"></script>
-    <script src="/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/bootstrap-flex.css">
-    <link rel="stylesheet" href="/css/bootstrap-grid.css">
-    <link rel="stylesheet" href="/css/bootstrap-reboot.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/jscolor.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-flex.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
     
     <!-- APP-LIBS -->
-    <link rel="stylesheet" href="/css/app.css">
-    <script src="/js/app.js" defer></script>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/app.js" defer></script>
   </head>
   <body>
     <main style="padding: 4px; width: 98%; margin: auto" class="row">
@@ -34,117 +34,468 @@
           </div>
           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colBackground">Background Color</label>
-              <input onchange="update(this.jscolor, 'fieldBackground')" type="text" class="jscolor {hash:true} form-control" id="colBackground" value="#F3F3F3">
+              <label for="colDefault">Default Color</label>
+              <input onchange="update(this.jscolor, 'fieldDefault')" type="text" class="jscolor {hash:true} form-control" id="colDefault" value="#A4C889">
             </div>
-            <div class="col-xs-6">
-              <label for="colTextNormal">Text Color</label>
-              <input onchange="update(this.jscolor, 'fieldNormalText')" type="text" class="jscolor {hash:true} form-control" id="colNormalText" value="#4D5A54">
+              <div class="col-xs-6">
+              <label for="colBgDefault">Default Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgDefault')" type="text" class="jscolor {hash:true} form-control bg" id="colBgDefault" value="#F3F3F3">
+              <input type="checkbox" id="bgtoall"> set for all
             </div>
-          </div>
-          <div class="form-group row">
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colBackground">Comment Color</label>
+              <label for="colComment">Comment Color</label>
               <input onchange="update(this.jscolor, 'fieldComment')" type="text" class="jscolor {hash:true} form-control" id="colComment" value="#A4C889">
             </div>
-            <div class="col-xs-6">
-              <label for="colTextNormal">Constant Color</label>
-              <input onchange="update(this.jscolor, 'fieldConstant')" type="text" class="jscolor {hash:true} form-control" id="colConstant" value="#65766E">
+              <div class="col-xs-6">
+              <label for="colBgComment">Comment Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgComment')" type="text" class="jscolor {hash:true} form-control bg" id="colBgComment" value="#F3F3F3">
             </div>
-          </div>
-          <div class="form-group row">
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colBackground">String Color</label>
-              <input onchange="update(this.jscolor, 'fieldString')" type="text" class="jscolor {hash:true} form-control" id="colString" value="#763535">
+              <label for="colCommentBright">Comment Bright Color</label>
+              <input onchange="update(this.jscolor, 'fieldCommentBright')" type="text" class="jscolor {hash:true} form-control" id="colCommentBright" value="#A4C889">
             </div>
+              <div class="col-xs-6">
+              <label for="colBgCommentBright">Comment Bright Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgCommentBright')" type="text" class="jscolor {hash:true} form-control bg" id="colBgCommentBright" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colTextNormal">Number Color</label>
-              <input onchange="update(this.jscolor, 'fieldNumber')" type="text" class="jscolor {hash:true} form-control" id="colNumber" value="#436876">
+              <label for="colIdentifier">Identifier Color</label>
+              <input onchange="update(this.jscolor, 'fieldIdentifier')" type="text" class="jscolor {hash:true} form-control" id="colIdentifier" value="#A4C889">
             </div>
-          </div>
-          <div class="form-group row">
+              <div class="col-xs-6">
+              <label for="colBgIdentifier">Identifier Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgIdentifier')" type="text" class="jscolor {hash:true} form-control bg" id="colBgIdentifier" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colBackground">Idenifier Color</label>
-              <input onchange="update(this.jscolor, 'fieldIdentifier')" type="text" class="jscolor {hash:true} form-control" id="colIdent" value="#76366B">
+              <label for="colIdentifierClass">Identifier Class Color</label>
+              <input onchange="update(this.jscolor, 'fieldIdentifierClass')" type="text" class="jscolor {hash:true} form-control" id="colIdentifierClass" value="#A4C889">
             </div>
+              <div class="col-xs-6">
+              <label for="colBgIdentifierClass">Identifier Class Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgIdentifierClass')" type="text" class="jscolor {hash:true} form-control bg" id="colBgIdentifierClass" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colTextNormal">Statement Color</label>
-              <input onchange="update(this.jscolor, 'fieldStatement')" type="text" class="jscolor {hash:true} form-control" id="colStatement" value="#7E5F7A">
+              <label for="colIdentifierMacro">Identifier Macro Color</label>
+              <input onchange="update(this.jscolor, 'fieldIdentifierMacro')" type="text" class="jscolor {hash:true} form-control" id="colIdentifierMacro" value="#A4C889">
             </div>
-          </div>
-          <div class="form-group row">
+              <div class="col-xs-6">
+              <label for="colBgIdentifierMacro">Identifier Macro Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgIdentifierMacro')" type="text" class="jscolor {hash:true} form-control bg" id="colBgIdentifierMacro" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colBackground">Preprocessor Statement Color</label>
-              <input onchange="update(this.jscolor, 'fieldPreprocStatement')" type="text" class="jscolor {hash:true} form-control" id="colPreprocStatement" value="#504376">
+              <label for="colIdentifierVar">Identifier Var Color</label>
+              <input onchange="update(this.jscolor, 'fieldIdentifierVar')" type="text" class="jscolor {hash:true} form-control" id="colIdentifierVar" value="#A4C889">
             </div>
+              <div class="col-xs-6">
+              <label for="colBgIdentifierVar">Identifier Var Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgIdentifierVar')" type="text" class="jscolor {hash:true} form-control bg" id="colBgIdentifierVar" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colTextNormal">Type Color</label>
-              <input onchange="update(this.jscolor, 'fieldType')" type="text" class="jscolor {hash:true} form-control" id="colType" value="#7E7B56">
+              <label for="colConstant">Constant Color</label>
+              <input onchange="update(this.jscolor, 'fieldConstant')" type="text" class="jscolor {hash:true} form-control" id="colConstant" value="#A4C889">
             </div>
-          </div>
-          <div class="form-group row">
+              <div class="col-xs-6">
+              <label for="colBgConstant">Constant Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgConstant')" type="text" class="jscolor {hash:true} form-control bg" id="colBgConstant" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colBackground">Special Color</label>
-              <input onchange="update(this.jscolor, 'fieldSpecial')" type="text" class="jscolor {hash:true} form-control" id="colSpecial" value="#23A3B1">
+              <label for="colConstantBool">Constant Bool Color</label>
+              <input onchange="update(this.jscolor, 'fieldConstantBool')" type="text" class="jscolor {hash:true} form-control" id="colConstantBool" value="#A4C889">
             </div>
+              <div class="col-xs-6">
+              <label for="colBgConstantBool">Constant Bool Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgConstantBool')" type="text" class="jscolor {hash:true} form-control bg" id="colBgConstantBool" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colTextNormal">Underlined Color</label>
-              <input onchange="update(this.jscolor, 'fieldUnderlined')" type="text" class="jscolor {hash:true} form-control" id="colUnderlined" value="#C08A2B">
+              <label for="colConstantBoolTrue">Constant Bool True Color</label>
+              <input onchange="update(this.jscolor, 'fieldConstantBoolTrue')" type="text" class="jscolor {hash:true} form-control" id="colConstantBoolTrue" value="#A4C889">
             </div>
-          </div>
-          <div class="form-group row">
+              <div class="col-xs-6">
+              <label for="colBgConstantBoolTrue">Constant Bool True Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgConstantBoolTrue')" type="text" class="jscolor {hash:true} form-control bg" id="colBgConstantBoolTrue" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colBackground">Error Color</label>
-              <input onchange="update(this.jscolor, 'fieldErr')" type="text" class="jscolor {hash:true} form-control" id="colError" value="#FF0000">
+              <label for="colConstantBoolFalse">Constant Bool False Color</label>
+              <input onchange="update(this.jscolor, 'fieldConstantBoolFalse')" type="text" class="jscolor {hash:true} form-control" id="colConstantBoolFalse" value="#A4C889">
             </div>
+              <div class="col-xs-6">
+              <label for="colBgConstantBoolFalse">Constant Bool False Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgConstantBoolFalse')" type="text" class="jscolor {hash:true} form-control bg" id="colBgConstantBoolFalse" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colTextNormal">ToDo Color</label>
-              <input onchange="update(this.jscolor, 'fieldTodo')" type="text" class="jscolor {hash:true} form-control" id="colTodo" value="#4677C0">
+              <label for="colConstantNumber">Constant Number Color</label>
+              <input onchange="update(this.jscolor, 'fieldConstantNumber')" type="text" class="jscolor {hash:true} form-control" id="colConstantNumber" value="#A4C889">
             </div>
-          </div>
-          <div class="form-group row">
+              <div class="col-xs-6">
+              <label for="colBgConstantNumber">Constant Number Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgConstantNumber')" type="text" class="jscolor {hash:true} form-control bg" id="colBgConstantNumber" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colBackground">Statusline Color</label>
-              <input onchange="update(this.jscolor, 'fieldStatusline')" type="text" class="jscolor {hash:true} form-control" id="colStatusline" value="#DADADA">
+              <label for="colConstantSpecialChar">Constant Special Char Color</label>
+              <input onchange="update(this.jscolor, 'fieldConstantSpecialChar')" type="text" class="jscolor {hash:true} form-control" id="colConstantSpecialChar" value="#A4C889">
             </div>
+              <div class="col-xs-6">
+              <label for="colBgConstantSpecialChar">Constant Special Char Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgConstantSpecialChar')" type="text" class="jscolor {hash:true} form-control bg" id="colBgConstantSpecialChar" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colTextNormal">Indent-Char Color</label>
-              <input onchange="update(this.jscolor, 'fieldIndentChar')" type="text" class="jscolor {hash:true} form-control" id="colIndentChar" value="#DADADA">
+              <label for="colConstantString">Constant String Color</label>
+              <input onchange="update(this.jscolor, 'fieldConstantString')" type="text" class="jscolor {hash:true} form-control" id="colConstantString" value="#A4C889">
             </div>
-          </div>
-          <div class="form-group row">
+              <div class="col-xs-6">
+              <label for="colBgConstantString">Constant String Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgConstantString')" type="text" class="jscolor {hash:true} form-control bg" id="colBgConstantString" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colBackground">Line Number Color</label>
-              <input onchange="update(this.jscolor, 'fieldLineNum')" type="text" class="jscolor {hash:true} form-control" id="colLineNum" value="#4D5A54">
+              <label for="colConstantStringUrl">Constant String Url Color</label>
+              <input onchange="update(this.jscolor, 'fieldConstantStringUrl')" type="text" class="jscolor {hash:true} form-control" id="colConstantStringUrl" value="#A4C889">
             </div>
+              <div class="col-xs-6">
+              <label for="colBgConstantStringUrl">Constant String Url Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgConstantStringUrl')" type="text" class="jscolor {hash:true} form-control bg" id="colBgConstantStringUrl" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colTextNormal">Current Line Number Color</label>
-              <input onchange="update(this.jscolor, 'fieldCurLineNum')" type="text" class="jscolor {hash:true} form-control" id="colCurLineNum" value="#4D5A54">
+              <label for="colStatement">Statement Color</label>
+              <input onchange="update(this.jscolor, 'fieldStatement')" type="text" class="jscolor {hash:true} form-control" id="colStatement" value="#A4C889">
             </div>
-          </div>
-          <div class="form-group row">
+              <div class="col-xs-6">
+              <label for="colBgStatement">Statement Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgStatement')" type="text" class="jscolor {hash:true} form-control bg" id="colBgStatement" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colBackground">Cursor Line Color</label>
-              <input onchange="update(this.jscolor, 'fieldCurLine')" type="text" class="jscolor {hash:true} form-control" id="colCurLine" value="#F8F8F8">
+              <label for="colSymbol">Symbol Color</label>
+              <input onchange="update(this.jscolor, 'fieldSymbol')" type="text" class="jscolor {hash:true} form-control" id="colSymbol" value="#A4C889">
             </div>
+              <div class="col-xs-6">
+              <label for="colBgSymbol">Symbol Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgSymbol')" type="text" class="jscolor {hash:true} form-control bg" id="colBgSymbol" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colTextNormal">Column Color</label>
-              <input onchange="update(this.jscolor, 'fieldCol')" type="text" class="jscolor {hash:true} form-control" id="colCol" value="#F8F8F8">
+              <label for="colSymbolBrackets">Symbol Brackets Color</label>
+              <input onchange="update(this.jscolor, 'fieldSymbolBrackets')" type="text" class="jscolor {hash:true} form-control" id="colSymbolBrackets" value="#A4C889">
             </div>
-          </div>
-          <div class="form-group row">
+              <div class="col-xs-6">
+              <label for="colBgSymbolBrackets">Symbol Brackets Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgSymbolBrackets')" type="text" class="jscolor {hash:true} form-control bg" id="colBgSymbolBrackets" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colBackground">Gutter Error Color</label>
-              <input onchange="update(this.jscolor, 'fieldGutErr')" type="text" class="jscolor {hash:true} form-control" id="colGutErr" value="#5A1C17">
+              <label for="colSymbolOperator">Symbol Operator Color</label>
+              <input onchange="update(this.jscolor, 'fieldSymbolOperator')" type="text" class="jscolor {hash:true} form-control" id="colSymbolOperator" value="#A4C889">
             </div>
+              <div class="col-xs-6">
+              <label for="colBgSymbolOperator">Symbol Operator Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgSymbolOperator')" type="text" class="jscolor {hash:true} form-control bg" id="colBgSymbolOperator" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
             <div class="col-xs-6">
-              <label for="colTextNormal">Gutter Warning Color</label>
-              <input onchange="update(this.jscolor, 'fieldGutWarn')" type="text" class="jscolor {hash:true} form-control" id="colGutWarn" value="#816421">
+              <label for="colSymbolTag">Symbol Tag Color</label>
+              <input onchange="update(this.jscolor, 'fieldSymbolTag')" type="text" class="jscolor {hash:true} form-control" id="colSymbolTag" value="#A4C889">
             </div>
-          </div>
+              <div class="col-xs-6">
+              <label for="colBgSymbolTag">Symbol Tag Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgSymbolTag')" type="text" class="jscolor {hash:true} form-control bg" id="colBgSymbolTag" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colPreproc">Preproc Color</label>
+              <input onchange="update(this.jscolor, 'fieldPreproc')" type="text" class="jscolor {hash:true} form-control" id="colPreproc" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgPreproc">Preproc Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgPreproc')" type="text" class="jscolor {hash:true} form-control bg" id="colBgPreproc" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colPreprocShebang">Preproc Shebang Color</label>
+              <input onchange="update(this.jscolor, 'fieldPreprocShebang')" type="text" class="jscolor {hash:true} form-control" id="colPreprocShebang" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgPreprocShebang">Preproc Shebang Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgPreprocShebang')" type="text" class="jscolor {hash:true} form-control bg" id="colBgPreprocShebang" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colType">Type Color</label>
+              <input onchange="update(this.jscolor, 'fieldType')" type="text" class="jscolor {hash:true} form-control" id="colType" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgType">Type Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgType')" type="text" class="jscolor {hash:true} form-control bg" id="colBgType" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colTypeKeyword">Type Keyword Color</label>
+              <input onchange="update(this.jscolor, 'fieldTypeKeyword')" type="text" class="jscolor {hash:true} form-control" id="colTypeKeyword" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgTypeKeyword">Type Keyword Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgTypeKeyword')" type="text" class="jscolor {hash:true} form-control bg" id="colBgTypeKeyword" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colSpecial">Special Color</label>
+              <input onchange="update(this.jscolor, 'fieldSpecial')" type="text" class="jscolor {hash:true} form-control" id="colSpecial" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgSpecial">Special Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgSpecial')" type="text" class="jscolor {hash:true} form-control bg" id="colBgSpecial" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colUnderlined">Underlined Color</label>
+              <input onchange="update(this.jscolor, 'fieldUnderlined')" type="text" class="jscolor {hash:true} form-control" id="colUnderlined" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgUnderlined">Underlined Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgUnderlined')" type="text" class="jscolor {hash:true} form-control bg" id="colBgUnderlined" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colError">Error Color</label>
+              <input onchange="update(this.jscolor, 'fieldError')" type="text" class="jscolor {hash:true} form-control" id="colError" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgError">Error Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgError')" type="text" class="jscolor {hash:true} form-control bg" id="colBgError" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colTodo">Todo Color</label>
+              <input onchange="update(this.jscolor, 'fieldTodo')" type="text" class="jscolor {hash:true} form-control" id="colTodo" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgTodo">Todo Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgTodo')" type="text" class="jscolor {hash:true} form-control bg" id="colBgTodo" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colSelection">Selection Color</label>
+              <input onchange="update(this.jscolor, 'fieldSelection')" type="text" class="jscolor {hash:true} form-control" id="colSelection" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgSelection">Selection Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgSelection')" type="text" class="jscolor {hash:true} form-control bg" id="colBgSelection" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colStatusline">Status Line Color</label>
+              <input onchange="update(this.jscolor, 'fieldStatusline')" type="text" class="jscolor {hash:true} form-control" id="colStatusline" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgStatusline">Status Line Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgStatusline')" type="text" class="jscolor {hash:true} form-control bg" id="colBgStatusline" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colTabbar">Tab Bar Color</label>
+              <input onchange="update(this.jscolor, 'fieldTabbar')" type="text" class="jscolor {hash:true} form-control" id="colTabbar" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgTabbar">Tab Bar Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgTabbar')" type="text" class="jscolor {hash:true} form-control bg" id="colBgTabbar" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colIndentChar">Indent Char Color</label>
+              <input onchange="update(this.jscolor, 'fieldIndentChar')" type="text" class="jscolor {hash:true} form-control" id="colIndentChar" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgIndentChar">Indent Char Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgIndentChar')" type="text" class="jscolor {hash:true} form-control bg" id="colBgIndentChar" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colLineNumber">Line Number Color</label>
+              <input onchange="update(this.jscolor, 'fieldLineNumber')" type="text" class="jscolor {hash:true} form-control" id="colLineNumber" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgLineNumber">Line Number Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgLineNumber')" type="text" class="jscolor {hash:true} form-control bg" id="colBgLineNumber" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colGutterError">Gutter Error Color</label>
+              <input onchange="update(this.jscolor, 'fieldGutterError')" type="text" class="jscolor {hash:true} form-control" id="colGutterError" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgGutterError">Gutter Error Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgGutterError')" type="text" class="jscolor {hash:true} form-control bg" id="colBgGutterError" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colGutterWarning">Gutter Warning Color</label>
+              <input onchange="update(this.jscolor, 'fieldGutterWarning')" type="text" class="jscolor {hash:true} form-control" id="colGutterWarning" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgGutterWarning">Gutter Warning Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgGutterWarning')" type="text" class="jscolor {hash:true} form-control bg" id="colBgGutterWarning" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colDiffAdded">Diff Added Color</label>
+              <input onchange="update(this.jscolor, 'fieldDiffAdded')" type="text" class="jscolor {hash:true} form-control" id="colDiffAdded" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgDiffAdded">Diff Added Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgDiffAdded')" type="text" class="jscolor {hash:true} form-control bg" id="colBgDiffAdded" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colDiffModified">Diff Modified Color</label>
+              <input onchange="update(this.jscolor, 'fieldDiffModified')" type="text" class="jscolor {hash:true} form-control" id="colDiffModified" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgDiffModified">Diff Modified Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgDiffModified')" type="text" class="jscolor {hash:true} form-control bg" id="colBgDiffModified" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colDiffDeleted">Diff Deleted Color</label>
+              <input onchange="update(this.jscolor, 'fieldDiffDeleted')" type="text" class="jscolor {hash:true} form-control" id="colDiffDeleted" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgDiffDeleted">Diff Deleted Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgDiffDeleted')" type="text" class="jscolor {hash:true} form-control bg" id="colBgDiffDeleted" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colCursorLine">Cursor Line Color</label>
+              <input onchange="update(this.jscolor, 'fieldCursorLine')" type="text" class="jscolor {hash:true} form-control" id="colCursorLine" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgCursorLine">Cursor Line Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgCursorLine')" type="text" class="jscolor {hash:true} form-control bg" id="colBgCursorLine" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colCurrentLineNumber">Current Line Number Color</label>
+              <input onchange="update(this.jscolor, 'fieldCurrentLineNumber')" type="text" class="jscolor {hash:true} form-control" id="colCurrentLineNumber" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgCurrentLineNumber">Current Line Number Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgCurrentLineNumber')" type="text" class="jscolor {hash:true} form-control bg" id="colBgCurrentLineNumber" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colColorColumn">Color Column Color</label>
+              <input onchange="update(this.jscolor, 'fieldColorColumn')" type="text" class="jscolor {hash:true} form-control" id="colColorColumn" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgColorColumn">Color Column Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgColorColumn')" type="text" class="jscolor {hash:true} form-control bg" id="colBgColorColumn" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colIgnore">Ignore Color</label>
+              <input onchange="update(this.jscolor, 'fieldIgnore')" type="text" class="jscolor {hash:true} form-control" id="colIgnore" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgIgnore">Ignore Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgIgnore')" type="text" class="jscolor {hash:true} form-control bg" id="colBgIgnore" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colScrollbar">Scrollbar Color</label>
+              <input onchange="update(this.jscolor, 'fieldScrollbar')" type="text" class="jscolor {hash:true} form-control" id="colScrollbar" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgScrollbar">Scrollbar Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgScrollbar')" type="text" class="jscolor {hash:true} form-control bg" id="colBgScrollbar" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colDivider">Divider Color</label>
+              <input onchange="update(this.jscolor, 'fieldDivider')" type="text" class="jscolor {hash:true} form-control" id="colDivider" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgDivider">Divider Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgDivider')" type="text" class="jscolor {hash:true} form-control bg" id="colBgDivider" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colMessage">Message Color</label>
+              <input onchange="update(this.jscolor, 'fieldMessage')" type="text" class="jscolor {hash:true} form-control" id="colMessage" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgMessage">Message Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgMessage')" type="text" class="jscolor {hash:true} form-control bg" id="colBgMessage" value="#F3F3F3">
+            </div>
+         </div>
+           <div class="form-group row">
+            <div class="col-xs-6">
+              <label for="colErrorMessage">Error Message Color</label>
+              <input onchange="update(this.jscolor, 'fieldErrorMessage')" type="text" class="jscolor {hash:true} form-control" id="colErrorMessage" value="#A4C889">
+            </div>
+              <div class="col-xs-6">
+              <label for="colBgErrorMessage">Error Message Background</label>
+              <input onchange="update(this.jscolor, 'fieldBgErrorMessage')" type="text" class="jscolor {hash:true} form-control bg" id="colBgErrorMessage" value="#F3F3F3">
+            </div>
+         </div>
           <div class="row">
-            <p>Implemented by Nickolay Ilyushin &lt;nickolay02@inbox.ru&gt;</p><br/>
-            <a href="https://github.com/handicraftsman/microtheme">Repo on GitHub</a><br/>
+            <p>Modified by Donato Cardone &lt;donicom@libero.it&gt;</p><br/>
+            <a href="https://github.com/donicom/microtheme">Repo on GitHub</a><br/>
           </div>
         </div>
       </div>
@@ -152,30 +503,56 @@
       <div class="card col-xs-6">
         <div class="card-block">
           <h4 class="card-title">Code</h4>
-          <code style="display: block; position: fixed">
+          <code style="display: block;position: static;">
             # Theme: <span id="fieldName"></span><br/>
             # Made using<br/> 
-            # https://github.com/handicraftsman/microtheme<br/>
-            color-link default "<span id="fieldNormalText"></span>,<span id="fieldBackground"></span>"<br/>
-            color-link comment "<span id="fieldComment"></span>"<br/>
-            color-link identifier "<span id="fieldIdentifier"></span>"<br/>
-            color-link constant "<span id="fieldConstant"></span>"<br/>
-            color-link statement "<span id="fieldStatement"></span>"<br/>
-            color-link statement.operator "<span id="fieldStatementOp"></span>"<br/>
-            color-link preproc "<span id="fieldPreprocStatement"></span>"<br/>
-            color-link type "<span id="fieldType"></span>"<br/>
-            color-link special "<span id="fieldSpecial"></span>"<br/>
-            color-link underlined "<span id="fieldUnderlined"></span>"<br/>
-            color-link error "<span id="fieldErr"></span>"<br/>
-            color-link todo "<span id="fieldTodo"></span>"<br/>
-            color-link statusline "<span id="fieldStatusline"></span>"<br/>
-            color-link indent-char "<span id="fieldIndentChar"></span>"<br/>
-            color-link line-number "<span id="fieldLineNum"></span>"<br/>
-            color-link gutter-error "<span id="fieldGutErr"></span>"<br/>
-            color-link gutter-warning "<span id="fieldGutWarn"></span>"<br/>
-            color-link cursor-line "<span id="fieldCurLine"></span>"<br/>
-            color-link current-line-number "<span id="fieldCurLineNum"></span>"<br/>
-            color-link color-column "<span id="fieldCol"></span>"
+            # https://github.com/donicom/microtheme<br/>
+            color-link default "<span id="fieldDefault"></span>,<span id="fieldBgDefault"></span>"<br/>
+            color-link comment "<span id="fieldComment"></span>,<span id="fieldBgComment"></span>"<br/>
+            color-link comment.bright "<span id="fieldCommentBright"></span>,<span id="fieldBgCommentBright"></span>"<br/>
+            color-link identifier "<span id="fieldIdentifier"></span>,<span id="fieldBgIdentifier"></span>"<br/>
+            color-link identifier.class "<span id="fieldIdentifierClass"></span>,<span id="fieldBgIdentifierClass"></span>"<br/>
+            color-link identifier.macro "<span id="fieldIdentifierMacro"></span>,<span id="fieldBgIdentifierMacro"></span>"<br/>
+            color-link identifier.var "<span id="fieldIdentifierVar"></span>,<span id="fieldBgIdentifierVar"></span>"<br/>
+            color-link constant "<span id="fieldConstant"></span>,<span id="fieldBgConstant"></span>"<br/>
+            color-link constant.bool "<span id="fieldConstantBool"></span>,<span id="fieldBgConstantBool"></span>"<br/>
+            color-link constant.bool.true "<span id="fieldConstantBoolTrue"></span>,<span id="fieldBgConstantBoolTrue"></span>"<br/>
+            color-link constant.bool.false "<span id="fieldConstantBoolFalse"></span>,<span id="fieldBgConstantBoolFalse"></span>"<br/>
+            color-link constant.number "<span id="fieldConstantNumber"></span>,<span id="fieldBgConstantNumber"></span>"<br/>
+            color-link constant.specialChar "<span id="fieldConstantSpecialChar"></span>,<span id="fieldBgConstantSpecialChar"></span>"<br/>
+            color-link constant.string "<span id="fieldConstantString"></span>,<span id="fieldBgConstantString"></span>"<br/>
+            color-link constant.string.url "<span id="fieldConstantStringUrl"></span>,<span id="fieldBgConstantStringUrl"></span>"<br/>
+            color-link statement "<span id="fieldStatement"></span>,<span id="fieldBgStatement"></span>"<br/>
+            color-link symbol "<span id="fieldSymbol"></span>,<span id="fieldBgSymbol"></span>"<br/>
+            color-link symbol.brackets "<span id="fieldSymbolBrackets"></span>,<span id="fieldBgSymbolBrackets"></span>"<br/>
+            color-link symbol.operator "<span id="fieldSymbolOperator"></span>,<span id="fieldBgSymbolOperator"></span>"<br/>
+            color-link symbol.tag "<span id="fieldSymbolTag"></span>,<span id="fieldBgSymbolTag"></span>"<br/>
+            color-link preproc "<span id="fieldPreproc"></span>,<span id="fieldBgPreproc"></span>"<br/>
+            color-link preproc.shebang "<span id="fieldPreprocShebang"></span>,<span id="fieldBgPreprocShebang"></span>"<br/>
+            color-link type "<span id="fieldType"></span>,<span id="fieldBgType"></span>"<br/>
+            color-link type.keyword "<span id="fieldTypeKeyword"></span>,<span id="fieldBgTypeKeyword"></span>"<br/>
+            color-link special "<span id="fieldSpecial"></span>,<span id="fieldBgSpecial"></span>"<br/>
+            color-link underlined "<span id="fieldUnderlined"></span>,<span id="fieldBgUnderlined"></span>"<br/>
+            color-link error "<span id="fieldError"></span>,<span id="fieldBgError"></span>"<br/>
+            color-link todo "<span id="fieldTodo"></span>,<span id="fieldBgTodo"></span>"<br/>
+            color-link selection "<span id="fieldSelection"></span>,<span id="fieldBgSelection"></span>"<br/>
+            color-link statusline "<span id="fieldStatusline"></span>,<span id="fieldBgStatusline"></span>"<br/>
+            color-link tabbar "<span id="fieldTabbar"></span>,<span id="fieldBgTabbar"></span>"<br/>
+            color-link indent-char "<span id="fieldIndentChar"></span>,<span id="fieldBgIndentChar"></span>"<br/>
+            color-link line-number "<span id="fieldLineNumber"></span>,<span id="fieldBgLineNumber"></span>"<br/>
+            color-link gutter-error "<span id="fieldGutterError"></span>,<span id="fieldBgGutterError"></span>"<br/>
+            color-link gutter-warning "<span id="fieldGutterWarning"></span>,<span id="fieldBgGutterWarning"></span>"<br/>
+            color-link diff-added "<span id="fieldDiffAdded"></span>,<span id="fieldBgDiffAdded"></span>"<br/>
+            color-link diff-modified "<span id="fieldDiffModified"></span>,<span id="fieldBgDiffModified"></span>"<br/>
+            color-link diff-deleted "<span id="fieldDiffDeleted"></span>,<span id="fieldBgDiffDeleted"></span>"<br/>
+            color-link cursor-line "<span id="fieldCursorLine"></span>,<span id="fieldBgCursorLine"></span>"<br/>
+            color-link current-line-number "<span id="fieldCurrentLineNumber"></span>,<span id="fieldBgCurrentLineNumber"></span>"<br/>
+            color-link color-column "<span id="fieldColorColumn"></span>,<span id="fieldBgColorColumn"></span>"<br/>
+            color-link ignore "<span id="fieldIgnore"></span>,<span id="fieldBgIgnore"></span>"<br/>
+            color-link scrollbar "<span id="fieldScrollbar"></span>,<span id="fieldBgScrollbar"></span>"<br/>
+            color-link divider "<span id="fieldDivider"></span>,<span id="fieldBgDivider"></span>"<br/>
+            color-link message "<span id="fieldMessage"></span>,<span id="fieldBgMessage"></span>"<br/>
+            color-link error-message "<span id="fieldErrorMessage"></span>,<span id="fieldBgErrorMessage"></span>"<br/>
           </code>
         </div>
       </div>
